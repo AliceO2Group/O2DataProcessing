@@ -379,7 +379,7 @@ workflow_has_parameter CALIB && has_detector_calib TPC && has_detectors TPC ITS 
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Event display
-workflow_has_parameter EVENT_DISPLAY && [ $NUMAID == 0 ] && WORKFLOW+="o2-eve-display $ARGS_ALL --configKeyValues \"$ARGS_ALL_CONFIG;$ITSMFT_FILES\" --display-tracks TPC --display-clusters TPC $EVE_CONFIG $DISABLE_MC | "
+workflow_has_parameter EVENT_DISPLAY && [ $NUMAID == 0 ] && WORKFLOW+="o2-eve-display $ARGS_ALL --configKeyValues \"$ARGS_ALL_CONFIG;$ITSMFT_FILES\" --display-tracks $TRACK_SOURCES --display-clusters $TRACK_SOURCES $EVE_CONFIG $DISABLE_MC | "
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Quality Control
